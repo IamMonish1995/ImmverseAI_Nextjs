@@ -99,9 +99,6 @@ export default function TodoComponent() {
             <form onSubmit={addTodo}>
               <div className="flex flex-col gap-2 justify-center w-full">
                 <div className="w-full">
-                  <label htmlFor="" className=" dark:text-gray-300">
-                    Todo Title
-                  </label>
                   <input
                     type="text"
                     className="mt-2 p-4 w-full border-2 rounded-lg dark:text-gray-200 dark:border-gray-600 dark:bg-gray-800"

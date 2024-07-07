@@ -1,7 +1,7 @@
 import TopBar from "@/components/TopBar";
 const Layout = ({ children }: { children: React.ReactNode }) => { 
   return (
-    <main>
+    <main className="w-screen min-h-screen">
       <TopBar />
       {children}
     </main>
