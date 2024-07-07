@@ -1,6 +1,14 @@
 "use client";
+import useStorage from "@/hooks/useStorage";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 function TopBar() {
+  const { clearAll } = useStorage();
+  const router = useRouter();
+  const handleLogout = () => {
+    clearAll();
+    router.push("/auth/login");
+  };
   return (
     <div className="px-4 mx-auto max-w-7xl sm:px-6">
       <div className="relative pt-6 pb-6 ">
@@ -30,9 +38,12 @@ function TopBar() {
           </div>
           <div className="absolute flex items-center justify-end inset-y-0 right-0">
             <div className="inline-flex rounded-full shadow">
-              <div className="inline-flex items-center px-4 py-2 text-base text-gray-900 bg-white border border-transparent rounded-full cursor-pointer font-base hover:bg-gray-50 ">
+              <button
+                onClick={handleLogout}
+                className="inline-flex items-center px-4 py-2 text-base text-gray-900 bg-white border border-transparent rounded-full cursor-pointer font-base hover:bg-gray-50 "
+              >
                 Logout
-              </div>
+              </button>
             </div>
           </div>
         </nav>
